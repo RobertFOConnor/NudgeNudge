@@ -1,56 +1,37 @@
 import React, {Component} from 'react';
-import {View, ActivityIndicator, Text, Image, Animated} from 'react-native';
+import {View, Text, Image, Animated} from 'react-native';
 import {styles} from './styles';
-import {Button} from "../../components/button/Button";
-import {LinkButton} from "../../components/link_button/LinkButton";
-import {TextField} from "../../components/text_field/TextField";
+import {Button} from '../../components/button/Button';
+import {LinkButton} from '../../components/link_button/LinkButton';
+import {TextField} from '../../components/text_field/TextField';
 import {strings} from '../../common/strings';
 import {theme} from './theme';
 import {assets} from '../../common/assets';
-import {setup, facebookSignIn, googleSignIn, firebaseSignIn} from '../../utils/LoginManager';
-import { Navigation } from 'react-native-navigation';
+import {setupLoginManager, facebookSignIn, googleSignIn, firebaseSignIn} from '../../utils/LoginManager';
+import {resetToScreen} from '../../navigation/ScreenManager';
+import {startFadeInAnimation} from '../../utils/AnimationHelper';
 
-export default class Login extends Component<Props> {
+export default class Login extends Component {
 
     constructor(props) {
         super(props);
-        setup();
+        setupLoginManager();
 
         this.state = {
             email: '',
             password: '',
             loading: false,
             errorMessage: null,
-            fadeAnim: new Animated.Value(0),
+            fadeInAnimatedValue: new Animated.Value(0),
         };
     }
 
     componentDidMount() {
-        this.startFadeInAnimation();
-    }
-
-    startFadeInAnimation() {
-        Animated.timing(
-            this.state.fadeAnim,
-            {
-                toValue: 1,
-                delay: 250,
-                duration: 1250,
-            }
-        ).start();
+        startFadeInAnimation(this.state.fadeInAnimatedValue);
     }
 
     advanceScreen = () => {
-        Navigation.setRoot({
-            root: {
-                component: {
-                    name: 'Profile',
-                    passProps: {
-                        user: this.state.email,
-                    },
-                }
-            }
-        });
+        resetToScreen('Profile');
     };
 
     renderLoginTextInputs() {
@@ -80,13 +61,12 @@ export default class Login extends Component<Props> {
 
     renderSocialButtons = () =>
         <View>
-            {/*<Text style={styles.socialOptions}>OR</Text>*/}
             {theme.allowGoogleSignIn &&
             <Button
                 testID='googleSignInButton'
                 title={strings.googleLogin}
                 style={styles.googleLoginButton}
-                leftIcon={assets.google_logo}
+                leftImage={assets.google_logo}
                 textStyle={styles.googleLoginButtonText}
                 onPress={() => googleSignIn({onSuccess: this.advanceScreen})}/>}
             {theme.allowFacebookSignIn &&
@@ -94,7 +74,7 @@ export default class Login extends Component<Props> {
                 testID='facebookSignInButton'
                 title={strings.facebookLogin}
                 style={styles.facebookLoginButton}
-                leftIcon={assets.facebook_logo}
+                leftImage={assets.facebook_logo}
                 textStyle={styles.facebookLoginButtonText}
                 onPress={() => facebookSignIn({onSuccess: this.advanceScreen})}/>}
         </View>;
@@ -107,9 +87,9 @@ export default class Login extends Component<Props> {
                 {theme.backgroundImage &&
                 <Image
                     style={styles.backgroundImage}
-                    source={{uri: "https://images.wallpaperscraft.com/image/mountains_sky_sunset_peaks_97149_1080x1920.jpg"}}
+                    source={assets.background_nature}
                 />}
-                <Animated.View style={[styles.contentContainer, {opacity: this.state.fadeAnim}]}>
+                <Animated.View style={[styles.contentContainer, {opacity: this.state.fadeInAnimatedValue}]}>
                     <View style={styles.headerContainer}>
                         <Text style={styles.header}>{strings.appName}</Text>
                         <Text style={styles.description}>{strings.signInDescription}</Text>
@@ -135,7 +115,6 @@ export default class Login extends Component<Props> {
                                 onPress={googleSignIn}/>
                         </View>
                     </View>
-                    {/*<ActivityIndicator style={{padding: 30}} animating={this.state.loading}/>*/}
                 </Animated.View>
             </View>
         );

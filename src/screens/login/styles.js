@@ -72,7 +72,7 @@ export const styles = StyleSheet.create({
     googleLoginButtonText: {
         color: colors.black,
     },
-   facebookLoginButton: {
+    facebookLoginButton: {
         height: theme.buttonHeight,
         borderRadius: theme.buttonRadius,
         backgroundColor: colors.facebookBlue,

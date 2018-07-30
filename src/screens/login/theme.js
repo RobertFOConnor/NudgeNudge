@@ -4,7 +4,7 @@ import {assets} from "../../common/assets";
 export const theme = {
 
     //Background
-    marginHorizontal: 40,
+    marginHorizontal: 50,
     marginVertical: 30,
     backgroundColor: colors.white,
     backgroundImage: assets.background_nature,
@@ -31,7 +31,7 @@ export const theme = {
     buttonTextColor: colors.white,
 
     //Social Buttons (Google / Facebook)
-    allowGoogleSignIn: false,
+    allowGoogleSignIn: true,
     allowFacebookSignIn: true,
     socialButtonVerticalSpacing: 20,
 

@@ -13,15 +13,15 @@ export const Button = ({
                            onPress,
                            title,
                            style,
-                           leftIcon,
+                           leftImage,
                            textStyle,
                        }) =>
     <TouchableOpacity testID={testID} onPress={onPress}>
         <View style={[buttonStyles.container, style]}>
-            {leftIcon &&
+            {leftImage &&
             <Image
-                style={buttonStyles.leftIcon}
-                source={leftIcon}
+                style={buttonStyles.leftImage}
+                source={leftImage}
             />}
             {!!title && <Text style={[buttonStyles.text, textStyle]}>{title}</Text>}
         </View>
@@ -29,13 +29,16 @@ export const Button = ({
 
 Button.defaultProps = {
     testID: 'button',
+    title: 'button',
 };
 
 Button.propTypes = {
     testID: PropTypes.string,
     onPress: PropTypes.func,
     title: PropTypes.string,
-    leftIcon: PropTypes.object,
+    leftImage: PropTypes.object,
     style: PropTypes.number,
     textStyle: PropTypes.number,
 };
+
+export default Button;

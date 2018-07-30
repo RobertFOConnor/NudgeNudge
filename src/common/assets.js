@@ -6,4 +6,6 @@ export const assets = {
     facebook_logo: require('../../assets/facebook_logo.png'),
     boggle_bg: require('../../assets/counter_top.jpg'),
     cube: require('../../assets/cube.png'),
+    profilePic: require('../../assets/profile.png'),
+    book: require('../../assets/book.jpg'),
 };

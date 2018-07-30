@@ -3,7 +3,6 @@ import {TextInput} from 'react-native';
 import PropTypes from 'prop-types';
 import {textFieldStyles} from "./textField.styles";
 import {colors} from "../../common/colors";
-import {Button} from "../button/Button";
 
 export const TextField = ({
                               testID,
@@ -25,7 +24,7 @@ export const TextField = ({
         onChangeText={onChangeText}
     />;
 
-Button.propTypes = {
+TextField.propTypes = {
     testID: PropTypes.string,
     hint: PropTypes.string,
     onChangeText: PropTypes.func,

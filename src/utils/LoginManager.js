@@ -2,7 +2,7 @@ import firebase from 'react-native-firebase';
 import {AccessToken, LoginManager} from "react-native-fbsdk";
 import {GoogleSignin} from "react-native-google-signin";
 
-export const setup = () => {
+export const setupLoginManager = () => {
     GoogleSignin.configure({
         iosClientId: '326047336299-m50ilgs22m95sn9i4rpqiorn19295g9c.apps.googleusercontent.com', // only for iOS
     });

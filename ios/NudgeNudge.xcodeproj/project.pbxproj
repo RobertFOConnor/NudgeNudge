@@ -61,6 +61,7 @@
 		E1387AF920E8BCDD00505F09 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1387AF820E8BCDD00505F09 /* FBSDKShareKit.framework */; };
 		E172BA6C20E52AA500E3BA0D /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E172BA6920E52A8600E3BA0D /* libReactNativeNavigation.a */; };
 		E1765A3020E6B74700D6EC09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E1765A0820E6B74700D6EC09 /* GoogleService-Info.plist */; };
+		E1E1A08E210DB058002033AE /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E1E1A08D210DB058002033AE /* FontAwesome.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -431,6 +432,7 @@
 		E1387AF820E8BCDD00505F09 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		E172BA6320E52A8600E3BA0D /* ReactNativeNavigation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeNavigation.xcodeproj; path = "../node_modules/react-native-navigation/lib/ios/ReactNativeNavigation.xcodeproj"; sourceTree = "<group>"; };
 		E1765A0820E6B74700D6EC09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E1E1A08D210DB058002033AE /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		F7156D00E9DD9F2558CCF2A7 /* libPods-NudgeNudge-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NudgeNudge-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -592,6 +594,7 @@
 		13B07FAE1A68108700A75B9A /* NudgeNudge */ = {
 			isa = PBXGroup;
 			children = (
+				E1E1A08D210DB058002033AE /* FontAwesome.ttf */,
 				E108D58520E6DE5F00E0752E /* main.jsbundle */,
 				E1765A0820E6B74700D6EC09 /* GoogleService-Info.plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -1294,6 +1297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				E1E1A08E210DB058002033AE /* FontAwesome.ttf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				E1765A3020E6B74700D6EC09 /* GoogleService-Info.plist in Resources */,
 				E108D58620E6DE5F00E0752E /* main.jsbundle in Resources */,

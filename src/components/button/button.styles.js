@@ -13,7 +13,7 @@ export const buttonStyles = StyleSheet.create({
         paddingHorizontal: 15,
         borderRadius: HEIGHT / 2,
     },
-    leftIcon: {
+    leftImage: {
         width: 30,
         height: 30,
         marginRight: 15,

@@ -20,4 +20,8 @@ export const colors = {
     yellow: '#fdd835',
     facebookBlue: '#3B5999',
     navy: '#000080',
+
+    profile_bg: '#222',
+    profile_text: '#FFF',
+    socialBar: '#333',
 };
