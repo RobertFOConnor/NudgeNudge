@@ -77,6 +77,7 @@ project.ext.react = [
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -94,20 +95,20 @@ def enableSeparateBuildPerCPUArchitecture = false
 def enableProguardInReleaseBuilds = false
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
     buildToolsVersion '27.0.3'
 
     defaultConfig {
         applicationId "com.nudgenudge"
+        multiDexEnabled true
         minSdkVersion 19
-        targetSdkVersion 26
+        targetSdkVersion 27
         missingDimensionStrategy "RNN.reactNativeVersion", "reactNative55"
         versionCode 1
         versionName "1.0"
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
-
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -155,16 +156,17 @@ dependencies {
     //implementation project(':react-native-sound')
     //implementation project(':react-native-fbsdk')
     //implementation project(':react-native-google-signin')
-    //implementation project(':react-native-firebase')
     // Firebase dependencies
-    //implementation "com.google.android.gms:play-services-base:15.0.1"
-    //implementation "com.google.firebase:firebase-core:16.0.1"
+    implementation "com.google.firebase:firebase-core:16.0.1"
+    implementation "com.google.android.gms:play-services-base:15.0.1"
+    implementation "com.google.firebase:firebase-auth:16.0.2"
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation 'com.android.support:design:26.1.0'
-    implementation "com.android.support:appcompat-v7:26.1.0"
+    implementation 'com.android.support:design:27.1.1'
+    implementation "com.android.support:appcompat-v7:27.1.1"
     implementation "com.facebook.react:react-native:+"  // From node_modules
     implementation project(':react-native-navigation')
+    implementation project(':react-native-firebase')
 }
 
 // Run this once to be able to run the application with BUCK
@@ -174,4 +176,4 @@ task copyDownloadableDepsToLibs(type: Copy) {
     into 'libs'
 }
 
-//apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.gms.google-services'

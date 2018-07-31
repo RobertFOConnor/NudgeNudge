@@ -30,7 +30,7 @@ const renderStar = (key, color) =>
     <Icon key={`star_${key}`} name="star" size={STAR_SIZE} color={color}/>;
 
 const renderHalfStar = key =>
-    <View>
+    <View key={key}>
         {renderStar(key, "#555")}
         <Icon style={{position: 'absolute', left: 0, bottom: 0}} name="star-half"
               size={STAR_SIZE} color={"#e66"}/>

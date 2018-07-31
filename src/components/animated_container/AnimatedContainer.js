@@ -14,14 +14,14 @@ export const AnimatedContainer = ({
                                   }) => {
 
     const animatedValue = new Animated.Value(0);
-    const marginLeft = animatedValue.interpolate({
+    const translateX = animatedValue.interpolate({
         inputRange: [0, 1],
         outputRange: [50, 0]
     });
     startFadeInAnimation(animatedValue, delay);
 
     return (
-        <Animated.View style={[style, {opacity: animatedValue, marginLeft}]}>
+        <Animated.View style={[style, {opacity: animatedValue, transform: [{translateX}]}]}>
             {contents}
         </Animated.View>
     );

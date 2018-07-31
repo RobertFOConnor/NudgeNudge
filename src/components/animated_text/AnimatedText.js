@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+    Text,
     Animated,
 } from 'react-native';
 import PropTypes from 'prop-types';
@@ -13,7 +14,7 @@ export const AnimatedText = ({
                              }) => {
 
     const animatedValue = new Animated.Value(0);
-    const marginLeft = animatedValue.interpolate({
+    const translateX = animatedValue.interpolate({
         inputRange: [0, 1],
         outputRange: [50, 0]
     });
@@ -21,16 +22,20 @@ export const AnimatedText = ({
     startFadeInAnimation(animatedValue, delay);
 
     return (
-        <Animated.Text
-            numberOfLines={1}
-            ellipsizeMode={'clip'}
-            style={[style, {
-                opacity: animatedValue,
-                marginLeft
-            }]}
-        >
-            {text}
-        </Animated.Text>
+        <Animated.View style={{
+            opacity: animatedValue,
+            transform: [
+                {translateX}
+            ]
+        }}>
+            <Text
+                numberOfLines={1}
+                ellipsizeMode={'clip'}
+                style={style}
+            >
+                {text}
+            </Text>
+        </Animated.View>
     );
 };
 

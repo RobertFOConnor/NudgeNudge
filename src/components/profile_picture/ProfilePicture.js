@@ -16,7 +16,7 @@ const spring = (animatedValue) => {
             toValue: 1,
             friction: 6,
             duration: 600,
-            delay: 300,
+            delay: 500,
             useNativeDriver: true,
         }
     ).start();

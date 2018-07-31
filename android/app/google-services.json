@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "326047336299",
+    "firebase_url": "https://nudgenudge-71e80.firebaseio.com",
+    "project_id": "nudgenudge-71e80",
+    "storage_bucket": "nudgenudge-71e80.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:326047336299:android:0cdf80b53966a21e",
+        "android_client_info": {
+          "package_name": "com.nudgenudge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "326047336299-b2numfmko8l2j09phgg5qekdlo37kd5f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXt4GKSwIsJckiaCsugzVWsLuaAK8p2tA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

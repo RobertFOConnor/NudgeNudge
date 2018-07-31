@@ -8,6 +8,7 @@ export const startFadeInAnimation = (value, delay = 250, duration = 500) => {
             toValue: 1,
             delay: delay,
             duration: duration,
+            useNativeDriver: true,
         }
     ).start();
 };
