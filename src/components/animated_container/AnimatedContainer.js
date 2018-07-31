@@ -11,12 +11,16 @@ export const AnimatedContainer = ({
                                       style,
                                       contents,
                                       delay,
+                                      direction,
                                   }) => {
 
     const animatedValue = new Animated.Value(0);
     const translateX = animatedValue.interpolate({
         inputRange: [0, 1],
-        outputRange: [50, 0]
+        outputRange: [
+            direction === 'right' ? 50 : -50,
+            0
+        ]
     });
     startFadeInAnimation(animatedValue, delay);
 
@@ -30,6 +34,8 @@ export const AnimatedContainer = ({
 AnimatedContainer.defaultProps = {
     testID: 'button',
     text: 'AnimatedContainer',
+    delay: 250,
+    direction: 'right',
 };
 
 AnimatedContainer.propTypes = {
@@ -37,6 +43,7 @@ AnimatedContainer.propTypes = {
     text: PropTypes.string,
     style: PropTypes.number,
     delay: PropTypes.number,
+    direction: PropTypes.string,
 };
 
 export default AnimatedContainer;
