@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import PropTypes from 'prop-types';
 import {styles} from "./styles";
 import {theme} from "../../theme";
@@ -8,12 +8,19 @@ import Button from '../../../../components/button/Button';
 import {exampleUser} from "../../../../utils/ProfileDataAPI";
 import AnimatedText from "../../../../components/animated_text/AnimatedText";
 import AnimatedContainer from "../../../../components/animated_container/AnimatedContainer";
+import {assets} from "../../../../common/assets";
 
 const INIT_DELAY = 500;
 const OFFSET_DELAY = 200;
 
 const ProfileHeader = ({onPress, userData}) =>
-    <View style={styles.container}>
+    <View>
+        {theme.headerBackgroundImage &&
+        <Image
+            style={styles.backgroundImage}
+            source={assets.background_stars}
+        />
+        }
         <View style={styles.contentContainer}>
             <ProfilePicture
                 size={theme.profileImageSize}
@@ -21,10 +28,10 @@ const ProfileHeader = ({onPress, userData}) =>
             />
             <View style={styles.textContainer}>
                 <AnimatedText style={styles.userName} text={userData.name} delay={INIT_DELAY}/>
-                <AnimatedText style={styles.userLocation} text={userData.location} delay={INIT_DELAY+OFFSET_DELAY}/>
+                <AnimatedText style={styles.userLocation} text={userData.location} delay={INIT_DELAY + OFFSET_DELAY}/>
                 <AnimatedContainer
                     style={styles.buttonContainer}
-                    delay={INIT_DELAY+(OFFSET_DELAY*2)}
+                    delay={INIT_DELAY + (OFFSET_DELAY * 2)}
                     contents={
                         <View style={styles.buttonContainer}>
                             <Button

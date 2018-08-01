@@ -6,6 +6,7 @@ import RatedList from "../../components/rated_list";
 import ProfileHeader from "./components/profileHeader";
 import {exampleUser} from "../../utils/ProfileDataAPI";
 import {startFadeOutAnimation} from '../../utils/AnimationHelper';
+import {pushScreen} from "../../navigation/ScreenManager";
 
 class Profile extends Component {
 
@@ -23,7 +24,8 @@ class Profile extends Component {
                 <Animated.View style={[styles.container, {opacity: this.state.fadeOutAnimation}]}>
                     <ProfileHeader userData={exampleUser}/>
                     <SocialBar socialData={exampleUser}/>
-                    <RatedList onItemPressed={() => startFadeOutAnimation(this.state.fadeOutAnimation)}/>
+                    <RatedList
+                        onItemPressed={() => pushScreen('ProductDetail')}/>
                 </Animated.View>
             </View>
         );

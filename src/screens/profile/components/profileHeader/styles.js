@@ -2,12 +2,22 @@ import {StyleSheet} from "react-native";
 import {colors} from '../../../../common/colors';
 import {theme} from '../../theme';
 
+const TOP_MARGIN = 50;
+
 const defaultStyles = {
-    container: {
-        // TODO add profile bg support.
+    backgroundImage: {
+        position: 'absolute',
+        backgroundColor: 'blue',
+        top: 0,
+        left: 0,
+        resizeMode: 'cover',
+        width: '100%',
+        height: TOP_MARGIN+theme.profileImageSize/2,
+        justifyContent: 'center',
+        opacity: 0.9,
     },
     contentContainer: {
-        marginTop: 80,
+        marginTop: TOP_MARGIN,
         marginHorizontal: theme.marginHorizontal,
         alignItems: 'center',
     },
