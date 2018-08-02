@@ -68,13 +68,15 @@ export default class Login extends Component {
                 style={styles.googleLoginButton}
                 leftImage={assets.google_logo}
                 textStyle={styles.googleLoginButtonText}
+                textColor={'#222'}
                 onPress={() => googleSignIn({onSuccess: this.advanceScreen})}/>}
             {theme.allowFacebookSignIn &&
             <Button
                 testID='facebookSignInButton'
                 title={strings.facebookLogin}
                 style={styles.facebookLoginButton}
-                leftImage={assets.facebook_logo}
+                leftIcon={'facebook-f'}
+                leftIconSize={24}
                 textStyle={styles.facebookLoginButtonText}
                 onPress={() => facebookSignIn({onSuccess: this.advanceScreen})}/>}
         </View>;
