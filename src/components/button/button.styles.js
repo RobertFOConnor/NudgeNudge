@@ -18,6 +18,13 @@ export const buttonStyles = StyleSheet.create({
         height: 30,
         marginRight: 15,
     },
+    leftIcon: {
+        width: 30,
+        height: 30,
+        paddingTop: 5,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
     text: {
         color: colors.white,
         fontSize: 18,

@@ -36,6 +36,7 @@ const ProfileHeader = ({onPress, userData}) =>
                         <View style={styles.buttonContainer}>
                             <Button
                                 title={"Share"}
+                                leftIcon={"share-alt"}
                                 style={styles.editButton}
                                 textStyle={styles.buttonText}
                             />

@@ -37,11 +37,13 @@ const defaultStyles = {
     buttonContainer: {
         flexDirection: 'row',
         alignItems: 'flex-end',
+        justifyContent: 'space-between',
     },
     editButton: {
-        marginRight: 10,
         marginTop: 20,
+        padding: 0,
         height: 40,
+        paddingHorizontal: 10,
         backgroundColor: null,
         borderColor: colors.transparent_white,
         borderWidth: 2,
@@ -50,6 +52,7 @@ const defaultStyles = {
     followButton: {
         marginTop: 20,
         height: 40,
+        paddingHorizontal: 10,
         backgroundColor: colors.blue,
         borderRadius: 5,
     },
