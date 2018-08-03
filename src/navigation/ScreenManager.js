@@ -4,7 +4,7 @@ import Profile from '../screens/profile';
 import Boggle from '../screens/boggle';
 import ProductDetail from '../screens/product_details';
 
-const ENTRY_SCREEN = 'Login';
+const ENTRY_SCREEN = 'Profile';
 
 const screens = {
     'Login': Login,

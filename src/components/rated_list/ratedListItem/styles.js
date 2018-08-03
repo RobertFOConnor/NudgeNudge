@@ -5,8 +5,8 @@ import {theme} from "../../../screens/profile/theme";
 export const styles = StyleSheet.create({
 
     container: {
+        paddingVertical: 20,
         flexDirection: 'row',
-        marginVertical: 15,
         marginHorizontal: theme.marginHorizontal,
     },
     itemImage: {
@@ -28,12 +28,20 @@ export const styles = StyleSheet.create({
         color: colors.profile_text,
         fontSize: 10,
         lineHeight: 16,
-        marginBottom: 16,
+        marginBottom: 10,
     },
     peopleReadCount: {
         color: colors.blue,
         fontSize: 12,
         textAlign: 'left',
         textDecorationLine: 'none',
+    },
+    divider: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: 1,
+        backgroundColor: colors.transparent_white,
     },
 });

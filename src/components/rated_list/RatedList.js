@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList} from 'react-native';
+import {View, Text, FlatList} from 'react-native';
 import PropTypes from 'prop-types';
 import RatedListItem from './ratedListItem/index';
 import {exampleItemList} from "../../utils/ProfileDataAPI";
@@ -10,10 +10,13 @@ export const RatedList = ({onItemPressed}) =>
     <AnimatedContainer
         style={styles.container}
         contents={
+            <View>
+                <Text style={styles.title}>Representative work</Text>
             <FlatList
                 data={exampleItemList}
                 renderItem={({item}) => <RatedListItem itemData={item} onPress={onItemPressed}/>}
             />
+            </View>
         }
         delay={700}
     />;

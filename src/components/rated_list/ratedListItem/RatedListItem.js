@@ -15,6 +15,7 @@ class RatedListItem extends Component {
         return (
             <TouchableWithoutFeedback key={itemData.key} onPress={onPress}>
                 <View style={styles.container}>
+                    <View style={styles.divider}/>
                     <Image
                         style={styles.itemImage}
                         source={assets.book}

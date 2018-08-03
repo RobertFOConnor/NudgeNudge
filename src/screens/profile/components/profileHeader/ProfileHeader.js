@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, Image} from 'react-native';
 import PropTypes from 'prop-types';
 import {styles} from "./styles";
+import {colors} from '../../../../common/colors';
 import {theme} from "../../theme";
 import ProfilePicture from '../../../../components/profile_picture';
 import Button from '../../../../components/button/Button';
@@ -39,6 +40,7 @@ const ProfileHeader = ({onPress, userData}) =>
                                 leftIcon={"share-alt"}
                                 style={styles.editButton}
                                 textStyle={styles.buttonText}
+                                textColor={colors.profile_text}
                             />
                             <Button
                                 title={"Followers"}

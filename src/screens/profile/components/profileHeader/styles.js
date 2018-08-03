@@ -35,14 +35,14 @@ const defaultStyles = {
         fontSize: 14,
     },
     buttonContainer: {
+        marginTop: 20,
+        height: 40,
         flexDirection: 'row',
         alignItems: 'flex-end',
         justifyContent: 'space-between',
     },
     editButton: {
-        marginTop: 20,
-        padding: 0,
-        height: 40,
+        flex: 1,
         paddingHorizontal: 10,
         backgroundColor: null,
         borderColor: colors.transparent_white,
@@ -50,8 +50,7 @@ const defaultStyles = {
         borderRadius: 5,
     },
     followButton: {
-        marginTop: 20,
-        height: 40,
+        flex: 1,
         paddingHorizontal: 10,
         backgroundColor: colors.blue,
         borderRadius: 5,
@@ -87,6 +86,10 @@ const centeredStyles = StyleSheet.create({
     userLocation: {
         ...defaultStyles.userLocation,
         textAlign: 'center',
+    },
+    editButton: {
+        ...defaultStyles.editButton,
+        marginRight: 5,
     },
 });
 

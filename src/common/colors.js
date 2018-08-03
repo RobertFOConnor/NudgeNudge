@@ -21,7 +21,13 @@ export const colors = {
     facebookBlue: '#3B5999',
     navy: '#000080',
 
+    //dark theme
     profile_bg: '#222',
     profile_text: '#FFF',
     socialBar: '#333',
+
+    //light theme
+    // profile_bg: '#EEF',
+    // profile_text: '#222',
+    // socialBar: '#CCE',
 };
