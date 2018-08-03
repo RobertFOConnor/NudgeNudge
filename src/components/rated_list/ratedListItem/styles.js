@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     },
     title: {
         color: colors.profile_text,
-        fontSize: 20,
+        fontSize: 16,
         fontWeight: 'bold',
     },
     description: {

@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     container: {
         paddingVertical: 3,
         marginVertical: 30,
-        borderRadius: 10,
+        borderRadius: 5,
         marginHorizontal: theme.marginHorizontal,
         backgroundColor: colors.socialBar,
         flexDirection: 'row',

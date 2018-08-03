@@ -32,7 +32,7 @@ Button.defaultProps = {
     testID: 'button',
     title: 'button',
     textColor: '#FFF',
-    leftIconSize: 18,
+    leftIconSize: 15,
 };
 
 Button.propTypes = {

@@ -38,12 +38,12 @@ const ProfileHeader = ({onPress, userData}) =>
                             <Button
                                 title={"Share"}
                                 leftIcon={"share-alt"}
-                                style={styles.editButton}
+                                style={styles.shareButton}
                                 textStyle={styles.buttonText}
-                                textColor={colors.profile_text}
+                                textColor={colors.share_button}
                             />
                             <Button
-                                title={"Followers"}
+                                title={"Follow"}
                                 style={styles.followButton}
                                 textStyle={styles.buttonText}
                             />

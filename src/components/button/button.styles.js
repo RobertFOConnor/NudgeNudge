@@ -19,9 +19,7 @@ export const buttonStyles = StyleSheet.create({
         marginRight: 15,
     },
     leftIcon: {
-        width: 30,
-        height: 30,
-        paddingTop: 5,
+        marginRight: 8,
         alignItems: 'center',
         justifyContent: 'center',
     },

@@ -36,22 +36,22 @@ const defaultStyles = {
     },
     buttonContainer: {
         marginTop: 20,
-        height: 40,
+        height: 32,
         flexDirection: 'row',
         alignItems: 'flex-end',
         justifyContent: 'space-between',
     },
-    editButton: {
+    shareButton: {
         flex: 1,
-        paddingHorizontal: 10,
+        paddingHorizontal: 15,
         backgroundColor: null,
-        borderColor: colors.transparent_white,
-        borderWidth: 2,
+        borderColor: colors.share_button,
+        borderWidth: 1,
         borderRadius: 5,
     },
     followButton: {
         flex: 1,
-        paddingHorizontal: 10,
+        paddingHorizontal: 20,
         backgroundColor: colors.blue,
         borderRadius: 5,
     },

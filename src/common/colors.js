@@ -25,6 +25,7 @@ export const colors = {
     profile_bg: '#222',
     profile_text: '#FFF',
     socialBar: '#333',
+    share_button: '#FFFFFF80',
 
     //light theme
     // profile_bg: '#EEF',
