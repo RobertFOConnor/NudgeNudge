@@ -39,7 +39,6 @@ const defaultStyles = {
         height: 32,
         flexDirection: 'row',
         alignItems: 'flex-end',
-        justifyContent: 'space-between',
     },
     shareButton: {
         flex: 1,
@@ -47,6 +46,7 @@ const defaultStyles = {
         backgroundColor: null,
         borderColor: colors.share_button,
         borderWidth: 1,
+        marginRight: 10,
         borderRadius: 5,
     },
     followButton: {

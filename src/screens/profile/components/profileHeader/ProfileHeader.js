@@ -26,6 +26,7 @@ const ProfileHeader = ({onPress, userData}) =>
             <ProfilePicture
                 size={theme.profileImageSize}
                 radius={theme.profileImageRadius}
+                image={userData.image}
             />
             <View style={styles.textContainer}>
                 <AnimatedText style={styles.userName} text={userData.name} delay={INIT_DELAY}/>

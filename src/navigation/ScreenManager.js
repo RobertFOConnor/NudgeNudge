@@ -22,19 +22,16 @@ const registerScreens = () => {
 export const startApp = () => {
     registerScreens();
 
-    Navigation.setDefaultOptions({
-        animated: false,
-        topBar: {
-            visible: false
-        },
-        animations: {
-            push: {
-
-            },
-        },
-    });
 
     Navigation.events().registerAppLaunchedListener(() => {
+
+        Navigation.setDefaultOptions({
+            animated: false,
+            topBar: {
+                visible: false,
+            },
+        });
+
         Navigation.setRoot({
 
             root: {

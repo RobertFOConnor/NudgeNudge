@@ -27,6 +27,7 @@ export const ProfilePicture = ({
                                    onPress,
                                    size,
                                    radius,
+                                   image,
                                }) => {
 
     const animatedValue = new Animated.Value(0);
@@ -41,7 +42,7 @@ export const ProfilePicture = ({
                         height: size,
                         borderRadius: radius,
                     }]}
-                    source={assets.profilePic}
+                    source={image ? {uri: image} : assets.profilePic}
                 />
             </Animated.View>
         </TouchableOpacity>)
@@ -61,6 +62,7 @@ ProfilePicture.propTypes = {
     leftImage: PropTypes.object,
     style: PropTypes.number,
     textStyle: PropTypes.number,
+    image: PropTypes.string,
 };
 
 export default ProfilePicture;
