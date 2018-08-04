@@ -28,7 +28,7 @@ export const fetchUserData = (id) => {
 
     const URL = "https://api.themoviedb.org/";
     const IMAGE_URL = "https://image.tmdb.org/t/p/w185///";
-    const API_KEY = "c03ce24e604507d26f870e38603a9df8";
+    const API_KEY = "KEY_HERE";
     const API_VERSION = 3;
 
     return fetch(URL + API_VERSION + "/person/" + id + "?api_key=" + API_KEY)
