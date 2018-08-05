@@ -69,14 +69,14 @@ export const fetchUserWorks = (id) => {
             [...responseJSON["crew"], ...responseJSON["cast"]].forEach((obj) => {
                 let alreadyAdded = false;
                 arr.forEach((addedItem) => {
-                    if (addedItem.key === obj.id) {
+                    if (addedItem.key === obj.id.toString()) {
                         alreadyAdded = true;
                     }
                 });
 
                 if (!alreadyAdded) {
                     arr.push({
-                        key: obj.id,
+                        key: obj.id.toString(),
                         title: obj.title,
                         image: obj.poster_path ? IMAGE_URL + obj.poster_path : null,
                         description: obj.overview,
