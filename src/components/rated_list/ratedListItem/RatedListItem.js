@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {styles} from "./styles";
 import {assets} from "../../../common/assets";
 import {LinkButton} from "../../link_button/LinkButton";
-import StarRating from "./starRating/StarRating";
+import StarRating from "../../starRating/StarRating";
 import {exampleItem} from "../../../utils/ProfileDataAPI";
 
 class RatedListItem extends Component {
@@ -13,12 +13,12 @@ class RatedListItem extends Component {
         const {itemData, onPress} = this.props;
 
         return (
-            <TouchableWithoutFeedback key={itemData.key} onPress={onPress}>
+            <TouchableWithoutFeedback key={itemData.key} onPress={() => onPress(itemData.key)}>
                 <View style={styles.container}>
                     <View style={styles.divider}/>
                     <Image
                         style={styles.itemImage}
-                        source={assets.book}
+                        source={itemData.image ? {uri: itemData.image} : assets.book}
                     />
                     <View style={styles.textContainer}>
                         <Text style={styles.title} numberOfLines={1}>{itemData.title}</Text>

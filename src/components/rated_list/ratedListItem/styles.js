@@ -2,6 +2,8 @@ import {StyleSheet} from "react-native";
 import {colors} from '../../../common/colors';
 import {theme} from "../../../screens/profile/theme";
 
+const POSTER_WIDTH = 80;
+
 export const styles = StyleSheet.create({
 
     container: {
@@ -10,8 +12,8 @@ export const styles = StyleSheet.create({
         marginHorizontal: theme.marginHorizontal,
     },
     itemImage: {
-        width: 80,
-        height: 120,
+        width: POSTER_WIDTH,
+        height: POSTER_WIDTH * 1.5,
         borderRadius: 5,
     },
     textContainer: {

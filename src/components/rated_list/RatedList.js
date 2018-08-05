@@ -6,14 +6,14 @@ import {exampleItemList} from "../../utils/ProfileDataAPI";
 import AnimatedContainer from "../animated_container/AnimatedContainer";
 import {styles} from "./styles";
 
-export const RatedList = ({onItemPressed}) =>
+export const RatedList = ({onItemPressed, items}) =>
     <AnimatedContainer
         style={styles.container}
         contents={
             <View>
                 <Text style={styles.title}>Representative work</Text>
             <FlatList
-                data={exampleItemList}
+                data={items}
                 renderItem={({item}) => <RatedListItem itemData={item} onPress={onItemPressed}/>}
             />
             </View>
@@ -23,11 +23,13 @@ export const RatedList = ({onItemPressed}) =>
 
 RatedList.defaultProps = {
     testID: 'linkButton',
+    items: exampleItemList,
 };
 
 RatedList.propTypes = {
     testID: PropTypes.string,
     onItemPressed: PropTypes.func,
+    items: PropTypes.array,
 };
 
 export default RatedList;

@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
         color: 'white',
         fontWeight: 'bold',
         fontSize: 16,
-        marginBottom: 15,
+        marginVertical: 15,
         marginHorizontal: theme.marginHorizontal,
     },
 });

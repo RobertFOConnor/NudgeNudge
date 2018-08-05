@@ -6,6 +6,7 @@ export const colors = {
     dark_grey: '#222',
     transparent_white: '#FFFFFF20',
     transparent_black: '#00000030',
+    transparent_text: '#FFFFFF85',
     error: '#FF0000',
     primary: '#0067dd',
     secondary: '#43a047',
@@ -20,6 +21,9 @@ export const colors = {
     yellow: '#fdd835',
     facebookBlue: '#3B5999',
     navy: '#000080',
+    star_rating: '#E66',
+    star_rating_bg: '#555',
+    divider: '#FFFFFF50',
 
     //dark theme
     profile_bg: '#222',

@@ -73,10 +73,13 @@ export const resetToScreen = screen => {
     });
 };
 
-export const pushScreen = screen => {
+export const pushScreen = (screen, props) => {
     Navigation.push('TEST', {
         component: {
             name: screen,
+            passProps: {
+                ...props,
+            },
         },
         options: {
             topBar: {

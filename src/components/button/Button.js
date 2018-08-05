@@ -30,7 +30,7 @@ export const Button = ({
 
 Button.defaultProps = {
     testID: 'button',
-    title: 'button',
+    title: null,
     textColor: '#FFF',
     leftIconSize: 15,
 };
