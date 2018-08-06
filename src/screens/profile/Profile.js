@@ -4,9 +4,9 @@ import {styles} from './styles';
 import {SocialBar} from "./components/socialBar/SocialBar";
 import RatedList from "../../components/rated_list";
 import ProfileHeader from "./components/profileHeader";
-import {exampleUser, fetchUserData, fetchUserWorks, fetchMovie} from "../../utils/ProfileDataAPI";
-import {startFadeOutAnimation} from '../../utils/AnimationHelper';
+import {fetchUserData, fetchUserWorks, fetchMovie} from "../../utils/ProfileDataAPI";
 import {pushScreen} from "../../navigation/ScreenManager";
+import PropTypes from 'prop-types';
 
 class Profile extends Component {
 
@@ -20,6 +20,10 @@ class Profile extends Component {
         };
     }
 
+    static propTypes = {
+        componentId: PropTypes.string
+    };
+
     async doFetch(id) {
         let res = await fetchUserData(id);
         this.setState({user: res});
@@ -31,7 +35,7 @@ class Profile extends Component {
     }
 
     componentDidMount() {
-        this.doFetch(18);
+        this.doFetch(101);
     }
 
     render() {
@@ -49,7 +53,7 @@ class Profile extends Component {
                         items={this.state.works}
                         onItemPressed={(key) => {
                             fetchMovie(key).then(movie =>
-                                pushScreen('ProductDetail', {product: movie})
+                                pushScreen('ProductDetail', {...this.props, product: movie, sharedElement: 'image_'+key})
                             );
                         }}
                     />

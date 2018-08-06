@@ -21,7 +21,7 @@ export const theme = {
     textInputColor: null,
     textInputTextColor: colors.white,
 
-    //Button theme (Login)
+    //BackButton theme (Login)
     buttonHeight: 50,
     buttonRadius: 25,
     buttonVerticalSpacing: 40,

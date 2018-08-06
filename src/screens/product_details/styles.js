@@ -4,7 +4,7 @@ import {colors} from "../../common/colors";
 
 const MARGIN_TOP = 90;
 const MARGIN_HORIZONTAL = 25;
-const POSTER_WIDTH = 100;
+const POSTER_WIDTH = 120;
 
 export const styles = StyleSheet.create({
     container: {
@@ -89,15 +89,5 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginVertical: 20,
         marginHorizontal: MARGIN_HORIZONTAL,
-    },
-    backButton: {
-        position: 'absolute',
-        left: 20,
-        top: 30,
-        height: 38,
-        backgroundColor: null,
-        paddingVertical: 0,
-        paddingHorizontal: 0,
-        borderRadius: 0,
     },
 });

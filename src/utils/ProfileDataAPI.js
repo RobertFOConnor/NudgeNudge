@@ -1,5 +1,3 @@
-import {assets} from "../common/assets";
-
 export const exampleItem = {
     key: 'IBN123456',
     title: 'Hitchhiker\'s Guide to the Galaxy',
@@ -83,11 +81,12 @@ export const fetchUserWorks = (id) => {
                         linkText: "Rated by: " + obj.vote_count,
                         rating: obj.vote_average / 2,
                         vote_count: obj.vote_count,
+                        popularity: obj.popularity,
                     });
                 }
 
                 arr.sort(function (obj1, obj2) {
-                    return obj2.vote_count - obj1.vote_count;
+                    return obj2.popularity - obj1.popularity;
                 });
             });
 

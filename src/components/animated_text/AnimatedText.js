@@ -11,6 +11,7 @@ export const AnimatedText = ({
                                  text,
                                  style,
                                  delay,
+                                 numberOfLines,
                              }) => {
 
     const animatedValue = new Animated.Value(0);
@@ -29,7 +30,7 @@ export const AnimatedText = ({
             ]
         }}>
             <Text
-                numberOfLines={1}
+                numberOfLines={numberOfLines}
                 ellipsizeMode={'clip'}
                 style={style}
             >
@@ -42,6 +43,7 @@ export const AnimatedText = ({
 AnimatedText.defaultProps = {
     testID: 'button',
     text: 'AnimatedText',
+    numberOfLines: 1,
 };
 
 AnimatedText.propTypes = {
@@ -49,6 +51,7 @@ AnimatedText.propTypes = {
     text: PropTypes.string,
     style: PropTypes.number,
     delay: PropTypes.number,
+    numberOfLines: PropTypes.number,
 };
 
 export default AnimatedText;

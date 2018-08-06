@@ -42,7 +42,6 @@ export const startApp = () => {
                             component: {
                                 name: ENTRY_SCREEN
                             },
-
                         }
                     ],
                 },
@@ -73,12 +72,34 @@ export const resetToScreen = screen => {
     });
 };
 
+export const pop = (componentId) => {
+    Navigation.popToRoot(componentId);
+};
+
 export const pushScreen = (screen, props) => {
-    Navigation.push('TEST', {
+    Navigation.push(props.componentId, {
         component: {
             name: screen,
             passProps: {
                 ...props,
+            },
+            options: {
+                customTransition: {
+                    animations: [
+                        {
+                            type: 'sharedElement',
+                            fromId: props.sharedElement,
+                            toId: 'image2',
+                            startDelay: 0,
+                            springVelocity: 0,
+                            duration: 0.8,
+                        }
+                    ],
+                    duration: 0.8,
+                },
+                topBar: {
+                    drawBehind: true
+                },
             },
         },
         options: {
@@ -90,7 +111,6 @@ export const pushScreen = (screen, props) => {
                 visible: false,
                 animate: false
             },
-            animated: false,
         }
     });
 };

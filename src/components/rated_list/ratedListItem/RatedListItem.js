@@ -6,6 +6,7 @@ import {assets} from "../../../common/assets";
 import {LinkButton} from "../../link_button/LinkButton";
 import StarRating from "../../starRating/StarRating";
 import {exampleItem} from "../../../utils/ProfileDataAPI";
+import {Navigation} from 'react-native-navigation';
 
 class RatedListItem extends Component {
 
@@ -16,10 +17,12 @@ class RatedListItem extends Component {
             <TouchableWithoutFeedback key={itemData.key} onPress={() => onPress(itemData.key)}>
                 <View style={styles.container}>
                     <View style={styles.divider}/>
-                    <Image
-                        style={styles.itemImage}
-                        source={itemData.image ? {uri: itemData.image} : assets.book}
-                    />
+                    <Navigation.Element elementId={'image_'+ itemData.key}>
+                        <Image
+                            style={styles.itemImage}
+                            source={itemData.image ? {uri: itemData.image} : assets.book}
+                        />
+                    </Navigation.Element>
                     <View style={styles.textContainer}>
                         <Text style={styles.title} numberOfLines={1}>{itemData.title}</Text>
                         <StarRating rating={itemData.rating}/>
