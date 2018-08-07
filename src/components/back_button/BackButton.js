@@ -1,19 +1,19 @@
 import React from 'react';
+import {View} from 'react-native';
 import PropTypes from 'prop-types';
 import {backButtonStyles} from "./backButton.styles";
-import Button from "../button";
+import IconButton from "../icon_button/IconButton";
 
 export const BackButton = ({onPress}) =>
-    <Button
-        style={backButtonStyles.backButton}
-        leftIcon={"angle-left"}
-        leftIconSize={38}
-        onPress={onPress}
-    />;
+    <View style={backButtonStyles.backButton}>
+        <IconButton
+            icon={"angle-left"}
+            iconSize={38}
+            onPress={onPress}
+        />
+    </View>;
 
-BackButton.defaultProps = {
-
-};
+BackButton.defaultProps = {};
 
 BackButton.propTypes = {
     onPress: PropTypes.func,

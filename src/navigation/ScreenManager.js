@@ -3,6 +3,7 @@ import Login from '../screens/login';
 import Profile from '../screens/profile';
 import Boggle from '../screens/boggle';
 import ProductDetail from '../screens/product_details';
+import Search from '../screens/search';
 
 const ENTRY_SCREEN = 'Profile';
 
@@ -11,6 +12,7 @@ const screens = {
     'Profile': Profile,
     'Boggle': Boggle,
     'ProductDetail': ProductDetail,
+    'Search': Search,
 };
 
 const registerScreens = () => {

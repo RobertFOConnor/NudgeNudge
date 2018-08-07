@@ -9,11 +9,13 @@ import Button from "../../components/button/Button";
 import AnimatedText from "../../components/animated_text/AnimatedText";
 import {Navigation} from 'react-native-navigation';
 import BackButton from "../../components/back_button/BackButton";
+import IconButton from "../../components/icon_button/IconButton";
 
 class ProductDetail extends Component {
 
     constructor(props) {
         super(props);
+        this.onBackPress = this.onBackPress.bind(this);
     }
 
     renderHeader = product =>
@@ -25,9 +27,9 @@ class ProductDetail extends Component {
                 />
             </Navigation.Element>
             <View style={styles.itemTextContainer}>
-                <AnimatedText style={styles.title} numberOfLines={3} text={product.title} />
-                <AnimatedText style={styles.description} numberOfLines={1} text={product.genres} />
-                <AnimatedText style={styles.description} numberOfLines={1} text={product.year} />
+                <AnimatedText style={styles.title} numberOfLines={3} text={product.title}/>
+                <AnimatedText style={styles.description} numberOfLines={1} text={product.genres}/>
+                <AnimatedText style={styles.description} numberOfLines={1} text={product.year}/>
                 <StarRating rating={product.rating}/>
             </View>
         </View>;
@@ -49,6 +51,12 @@ class ProductDetail extends Component {
         />;
 
 
+    async onBackPress() {
+        console.log("WAIT_BACK");
+        await Navigation.pop(this.props.componentId);
+        console.log("BACK");
+    }
+
     renderDivider = () => <View style={styles.divider}/>;
 
     render() {
@@ -65,7 +73,7 @@ class ProductDetail extends Component {
                         blurRadius={0.5}
                     />}
 
-                    <BackButton onPress={/*do a pop*/}/>
+                    <BackButton onPress={this.onBackPress}/>
 
                     {this.renderHeader(product)}
                     {this.renderDivider()}
@@ -90,6 +98,7 @@ ProductDetail.defaultProps = {
 
 ProductDetail.propTypes = {
     product: PropTypes.object,
+    componentId: PropTypes.string,
 };
 
 export default ProductDetail;

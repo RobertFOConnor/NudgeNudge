@@ -35,7 +35,7 @@ class Profile extends Component {
     }
 
     componentDidMount() {
-        this.doFetch(101);
+        this.doFetch(2);
     }
 
     render() {
