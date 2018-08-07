@@ -4,7 +4,7 @@ import {styles} from './styles';
 import {SocialBar} from "./components/socialBar/SocialBar";
 import RatedList from "../../components/rated_list";
 import ProfileHeader from "./components/profileHeader";
-import {fetchUserData, fetchUserWorks, fetchMovie} from "../../utils/ProfileDataAPI";
+import {fetchUserData, fetchUserWorks} from "../../utils/ProfileDataAPI";
 import {pushScreen} from "../../navigation/ScreenManager";
 import PropTypes from 'prop-types';
 
@@ -52,9 +52,17 @@ class Profile extends Component {
                     <RatedList
                         items={this.state.works}
                         onItemPressed={(key) => {
-                            fetchMovie(key).then(movie =>
-                                pushScreen('ProductDetail', {...this.props, product: movie, sharedElement: 'image_'+key})
-                            );
+                            const works = this.state.works;
+                            let product;
+                            for (let i = 0; i < works.length; i++) {
+                                if (works[i].key === key) {
+                                    product = works[i];
+                                }
+                            }
+
+                            if (product) {
+                                pushScreen('ProductDetail', {...this.props, product, sharedElement: 'image_' + key});
+                            }
                         }}
                     />
                 </Animated.View>

@@ -9,7 +9,7 @@ import Button from "../../components/button/Button";
 import AnimatedText from "../../components/animated_text/AnimatedText";
 import {Navigation} from 'react-native-navigation';
 import BackButton from "../../components/back_button/BackButton";
-import IconButton from "../../components/icon_button/IconButton";
+import AnimatedContainer from "../../components/animated_container/AnimatedContainer";
 
 class ProductDetail extends Component {
 
@@ -26,13 +26,17 @@ class ProductDetail extends Component {
                     source={product.image ? {uri: product.image} : assets.book}
                 />
             </Navigation.Element>
-            <View style={styles.itemTextContainer}>
-                <AnimatedText style={styles.title} numberOfLines={3} text={product.title}/>
-                <AnimatedText style={styles.description} numberOfLines={1} text={product.genres}/>
-                <AnimatedText style={styles.description} numberOfLines={1} text={product.year}/>
-                <StarRating rating={product.rating}/>
-            </View>
-        </View>;
+            <AnimatedContainer style={styles.itemTextContainer}
+                               direction={'left'}
+                               contents={
+                                   <View>
+                                       <Text style={styles.title} numberOfLines={3}>{product.title}</Text>
+                                       <Text style={styles.description} numberOfLines={1}>{product.genres}</Text>
+                                       <Text style={styles.description} numberOfLines={1}>{product.year}</Text>
+                                       <StarRating rating={product.rating}/>
+                                   </View>}/>
+        </View>
+    ;
 
     renderInteractionBar = () =>
         <View style={styles.interactionBarContainer}>
@@ -52,9 +56,7 @@ class ProductDetail extends Component {
 
 
     async onBackPress() {
-        console.log("WAIT_BACK");
         await Navigation.pop(this.props.componentId);
-        console.log("BACK");
     }
 
     renderDivider = () => <View style={styles.divider}/>;

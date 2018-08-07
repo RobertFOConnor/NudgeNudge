@@ -40,7 +40,6 @@ export const fetchUserData = (id) => {
         .then(
             response => response.json())
         .then(responseJSON => {
-            console.log("res", responseJSON);
             const personDetails = responseJSON;
 
             return {
@@ -64,29 +63,31 @@ export const fetchUserWorks = (id) => {
         .then(
             response => response.json())
         .then(responseJSON => {
-            [...responseJSON["crew"], ...responseJSON["cast"]].forEach((obj) => {
+            [...responseJSON["crew"], ...responseJSON["cast"]].forEach((movieInfo) => {
                 let alreadyAdded = false;
                 arr.forEach((addedItem) => {
-                    if (addedItem.key === obj.id.toString()) {
+                    if (addedItem.key === movieInfo.id.toString()) {
                         alreadyAdded = true;
                     }
                 });
 
                 if (!alreadyAdded) {
                     arr.push({
-                        key: obj.id.toString(),
-                        title: obj.title,
-                        image: obj.poster_path ? IMAGE_URL + obj.poster_path : null,
-                        description: obj.overview,
-                        linkText: "Rated by: " + obj.vote_count,
-                        rating: obj.vote_average / 2,
-                        vote_count: obj.vote_count,
-                        popularity: obj.popularity,
+                        key: movieInfo.id.toString(),
+                        title: movieInfo.title,
+                        image: movieInfo.poster_path ? IMAGE_URL + movieInfo.poster_path : null,
+                        bg_image: IMAGE_URL + movieInfo.backdrop_path,
+                        description: movieInfo.overview,
+                        linkText: "Rated by: " + movieInfo.vote_count,
+                        rating: movieInfo.vote_average / 2,
+                        year: "Release date: " + movieInfo.release_date,
+                        vote_count: movieInfo.vote_count,
+                        popularity: movieInfo.popularity,
                     });
                 }
 
-                arr.sort(function (obj1, obj2) {
-                    return obj2.popularity - obj1.popularity;
+                arr.sort(function (movie1, movie2) {
+                    return movie2.popularity - movie1.popularity;
                 });
             });
 
@@ -104,11 +105,10 @@ export const fetchMovie = (id) => {
         .then(
             response => response.json())
         .then(responseJSON => {
-            console.log("MOVIE: ", responseJSON);
 
             let genres = '';
             if (responseJSON.genres.length > 0) {
-                responseJSON.genres.forEach(obj => genres += (obj.name + ", "));
+                responseJSON.genres.forEach(genre => genres += (genre.name + ", "));
                 genres = genres.substring(0, genres.length - 2);
             }
 
