@@ -4,6 +4,8 @@ import Profile from '../screens/profile';
 import Boggle from '../screens/boggle';
 import ProductDetail from '../screens/product_details';
 import Search from '../screens/search';
+import {generateImages} from "../utils/IconUtils";
+import {assets} from "../common/assets";
 
 const ENTRY_SCREEN = 'Profile';
 
@@ -22,46 +24,92 @@ const registerScreens = () => {
 };
 
 export const startApp = () => {
+
+    this.icons = [
+        {name: 'list'},
+        {name: 'user'},
+    ];
+
+    generateImages(this.icons)
+        .then(icons => {
+            this.icons = icons;
+            const genIcons = icons;
+
+            Navigation.events().registerAppLaunchedListener(() => {
+
+                Navigation.setDefaultOptions({
+                    animated: false,
+                    topBar: {
+                        visible: false,
+                    },
+                    bottomTabs: {
+                        visible: true,
+                        animate: false, // Controls whether BottomTabs visibility changes should be animated
+                        currentTabIndex: 0,
+                        currentTabId: 'currentTabId',
+                        testID: 'bottomTabsTestID',
+                        drawBehind: false,
+                        backgroundColor: 'black',
+                        tabColor: 'white',
+                        selectedTabColor: 'red',
+                    },
+                });
+
+                Navigation.setRoot({
+                    root: {
+                        bottomTabs: {
+                            children: [{
+                                stack: {
+                                    children: [{
+                                        component: {
+                                            name: 'Login',
+                                            passProps: {
+                                                text: 'This is tab 1'
+                                            },
+                                            options: {
+                                                bottomTab: {
+                                                    text: 'Tab 1',
+                                                    icon: genIcons['list'],
+                                                    testID: 'FIRST_TAB_BAR_BUTTON',
+                                                }
+                                            },
+                                        }
+                                    }],
+
+                                }
+                            },
+                                {
+                                    stack: {
+                                        children: [{
+                                            component: {
+                                                name: 'Profile',
+                                                passProps: {
+                                                    text: 'This is tab 2'
+                                                },
+                                                options: {
+                                                    bottomTab: {
+                                                        text: 'Tab 2',
+                                                        icon: genIcons['user'],
+                                                        testID: 'SECOND_TAB_BAR_BUTTON',
+                                                    }
+                                                }
+                                            }
+                                        }],
+                                    },
+                                }],
+                        }
+                    }
+                });
+            });
+        })
+        // eslint-disable-next-line no-console
+        .catch(error => console.error(error));
+
+
     registerScreens();
 
 
-    Navigation.events().registerAppLaunchedListener(() => {
 
-        Navigation.setDefaultOptions({
-            animated: false,
-            topBar: {
-                visible: false,
-            },
-        });
-
-        Navigation.setRoot({
-
-            root: {
-                stack: {
-                    id: 'TEST',
-                    children: [
-                        {
-                            component: {
-                                name: ENTRY_SCREEN
-                            },
-                        }
-                    ],
-                },
-            },
-
-            options: {
-                animated: true,
-                topBar: {
-                    title: {
-                        text: 'My Screen'
-                    },
-                    drawBehind: true,
-                    visible: true,
-                    animate: false
-                },
-            }
-        });
-    });
 };
 
 export const resetToScreen = screen => {

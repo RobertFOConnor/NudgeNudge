@@ -153,6 +153,7 @@ configurations.all {
 }
 
 dependencies {
+    compile project(':react-native-vector-icons')
     //implementation project(':react-native-sound')
     //implementation project(':react-native-fbsdk')
     //implementation project(':react-native-google-signin')
