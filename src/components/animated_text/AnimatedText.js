@@ -31,7 +31,6 @@ export const AnimatedText = ({
         }}>
             <Text
                 numberOfLines={numberOfLines}
-                ellipsizeMode={'clip'}
                 style={style}
             >
                 {text}

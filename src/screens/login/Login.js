@@ -7,7 +7,6 @@ import {TextField} from '../../components/text_field/TextField';
 import {strings} from '../../common/strings';
 import {theme} from './theme';
 import {assets} from '../../common/assets';
-import {setupLoginManager, facebookSignIn, googleSignIn, firebaseSignIn} from '../../utils/LoginManager';
 import {resetToScreen} from '../../navigation/ScreenManager';
 import {startFadeInAnimation} from '../../utils/AnimationHelper';
 
@@ -15,7 +14,6 @@ export default class Login extends Component {
 
     constructor(props) {
         super(props);
-        setupLoginManager();
 
         this.state = {
             email: '',
@@ -69,7 +67,7 @@ export default class Login extends Component {
                 leftImage={assets.google_logo}
                 textStyle={styles.googleLoginButtonText}
                 textColor={'#222'}
-                onPress={() => googleSignIn({onSuccess: this.advanceScreen})}/>}
+                onPress={() => console.log("GOOGS")}/>}
             {theme.allowFacebookSignIn &&
             <Button
                 testID='facebookSignInButton'
@@ -78,7 +76,7 @@ export default class Login extends Component {
                 leftIcon={'facebook-f'}
                 leftIconSize={24}
                 textStyle={styles.facebookLoginButtonText}
-                onPress={() => facebookSignIn({onSuccess: this.advanceScreen})}/>}
+                onPress={() => console.log("MARKFUCKERBURG")}/>}
         </View>;
 
     renderErrorMessage = (error) => <Text style={styles.errorMessage}>{error}</Text>;
@@ -104,17 +102,13 @@ export default class Login extends Component {
                                 title={strings.login}
                                 style={styles.loginButton}
                                 textStyle={styles.loginButtonText}
-                                onPress={() => firebaseSignIn({
-                                    email: this.state.email,
-                                    password: this.state.password,
-                                    onSuccess: this.advanceScreen,
-                                })}/>
+                                onPress={() => console.log("FIRESHIT")}/>
                             {this.renderSocialButtons()}
                             <LinkButton
                                 testID='signUpLink'
                                 title={strings.signUpLink}
                                 style={styles.bottomLink}
-                                onPress={googleSignIn}/>
+                                onPress={() => console.log("HELPMEIMSCARED")}/>
                         </View>
                     </View>
                 </Animated.View>

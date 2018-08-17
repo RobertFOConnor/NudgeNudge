@@ -31,6 +31,7 @@ export const startApp = () => {
             animated: false,
             topBar: {
                 visible: false,
+                height: 0,
             },
         });
 
@@ -52,11 +53,8 @@ export const startApp = () => {
             options: {
                 animated: true,
                 topBar: {
-                    title: {
-                        text: 'My Screen'
-                    },
                     drawBehind: true,
-                    visible: true,
+                    visible: false,
                     animate: false
                 },
             }
@@ -86,19 +84,6 @@ export const pushScreen = (screen, props) => {
                 ...props,
             },
             options: {
-                customTransition: {
-                    animations: [
-                        {
-                            type: 'sharedElement',
-                            fromId: props.sharedElement,
-                            toId: 'image2',
-                            startDelay: 0,
-                            springVelocity: 0,
-                            duration: 0.8,
-                        }
-                    ],
-                    duration: 0.8,
-                },
                 topBar: {
                     drawBehind: true
                 },

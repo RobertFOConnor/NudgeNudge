@@ -42,7 +42,6 @@ const defaultStyles = {
     },
     shareButton: {
         flex: 1,
-        paddingHorizontal: 15,
         backgroundColor: null,
         borderColor: colors.share_button,
         borderWidth: 1,
@@ -51,7 +50,6 @@ const defaultStyles = {
     },
     followButton: {
         flex: 1,
-        paddingHorizontal: 20,
         backgroundColor: colors.blue,
         borderRadius: 5,
     },

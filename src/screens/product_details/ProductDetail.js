@@ -20,12 +20,10 @@ class ProductDetail extends Component {
 
     renderHeader = product =>
         <View style={styles.itemContainer}>
-            <Navigation.Element elementId='image2'>
                 <Image
                     style={styles.itemImage}
                     source={product.image ? {uri: product.image} : assets.book}
                 />
-            </Navigation.Element>
             <AnimatedContainer style={styles.itemTextContainer}
                                direction={'left'}
                                contents={

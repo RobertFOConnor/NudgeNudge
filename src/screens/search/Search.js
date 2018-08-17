@@ -21,24 +21,7 @@ export default class Search extends Component {
         return (
             <View style={styles.container}>
                 <View>
-                    <TextField
-                        testID='emailInput'
-                        style={styles.textInputs}
-                        hint={strings.emailHint}
-                        onChangeText={(text) => {
-                            this.setState({errorMessage: null});
-                            this.setState({email: text})
-                        }}/>
-                    <Button
-                        testID='signInButton'
-                        title={strings.login}
-                        style={styles.loginButton}
-                        textStyle={styles.loginButtonText}
-                        onPress={() => firebaseSignIn({
-                            email: this.state.email,
-                            password: this.state.password,
-                            onSuccess: this.advanceScreen,
-                        })}/>
+
                 </View>
 
             </View>
